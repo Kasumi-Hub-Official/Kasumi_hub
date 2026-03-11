@@ -1,0 +1,182 @@
+if game:GetService("CoreGui"):FindFirstChild("Rayfield") then
+    game:GetService("CoreGui"):FindFirstChild("Rayfield"):Destroy()
+end
+
+if not game:IsLoaded() then game.Loaded:Wait() end
+
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "👑 KASUMI HUB",
+   LoadingTitle = "KASUMI SYSTEM",
+   LoadingSubtitle = "By Bi Gấu Chíp",
+   ConfigurationSaving = {Enabled = true, FolderName = "KasumiHub"},
+   KeySystem = false,
+   Theme = "DarkBlue"
+})
+
+local TabHome = Window:CreateTab("🏠 Trang Chủ", 4483362458)
+TabHome:CreateSection("Thông Tin")
+TabHome:CreateLabel("👤 Người Tạo: Bi Gấu Chíp")
+TabHome:CreateButton({Name = "📋 Copy Discord", Callback = function() setclipboard("https://discord.gg/kasumi") end})
+
+local TabMain = Window:CreateTab("📜 Script Hubs", 4483362458)
+
+TabMain:CreateButton({
+   Name = "🍌 Trẩu Banana V1",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/trungdao2k4/trauroblox/refs/heads/main/traubluev1"))()
+   end,
+})
+
+TabMain:CreateButton({
+   Name = "🎯 Night Bounty (Auto Hunt)",
+   Callback = function()
+       getgenv().Config = {
+           Team = "Pirates",
+           HuntConfig = {
+               ["Earned Notification Enabled"] = true,
+               ["Farm Delay"] = 0.22,
+               ["Webhook"] = { Enabled = false, Url = "" }
+           }
+       }
+       loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/2ffcdb62773f587bfb9eb0d52bb35b0c.lua"))()
+   end,
+})
+
+TabMain:CreateButton({
+   Name = "🦊 Nak Hub",
+   Callback = function()
+       loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-AnhTuansitink/MainLoaderScript/refs/heads/main/ILoveH.lua"))()
+   end,
+})
+
+TabMain:CreateButton({
+   Name = "⚔️ Hermanos Hub",
+   Callback = function()
+       local script_mode = "PVP" 
+       local loader = loadstring
+       local url = "https://raw.githubusercontent.com/hermanos-dev/hermanos-hub/refs/heads/main/Loader.lua"
+       local response = game:HttpGet(url)
+       loader(response)()
+   end,
+})
+
+TabMain:CreateButton({
+   Name = "⚔️ 3TOC (Auto Bounty)",
+   Callback = function()
+       loadstring(game:HttpGet("https://key.bloxlegend.com/raw/AutoBounty2"))()
+   end,
+})
+
+TabMain:CreateButton({
+   Name = "🌙 Night Katun (Auto Config)",
+   Callback = function()
+       getgenv().Config = {
+           Team = "Pirates",
+           FarmConfig = {
+               ["Out game when done all"] = true,
+               ["Bypass Teleport"] = true,
+               ["Double Quest(RISK)"] = true
+           },
+           Items = {
+               ["Saber"] = true,
+               ["Pole (1st form)"] = true,
+               ["Skull Guitar"] = true,
+               ["Cursed Dual Katana"] = true,
+               ["Godhuman"] = true
+           },
+           Webhook = { ["Enabled"] = false, ["Url"] = "" }
+       }
+       loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/d6c7959dcc94cd24467080d82a56dcf9.lua"))()
+   end,
+})
+
+TabMain:CreateButton({
+   Name = "🐻 Bear Hub",
+   Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Huylovemy/Bearhudz/refs/heads/main/Bearhud.lua"))() end,
+})
+
+TabMain:CreateButton({
+   Name = "🐱 Min V6",
+   Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/Min/refs/heads/main/MinN"))() end,
+})
+
+TabMain:CreateButton({
+   Name = "🔴 Redz Hub",
+   Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/tlredz/Scripts/refs/heads/main/main.luau"))({JoinTeam="Pirates",Translator=true}) end,
+})
+
+TabMain:CreateSection("Key")
+
+TabMain:CreateButton({
+   Name = "🌅 Rise Hub",
+   Callback = function() loadstring(game:HttpGet("https://rise-evo.xyz/apiv3/main.lua"))() end,
+})
+
+TabMain:CreateButton({
+   Name = "🚀 Speed Hub X",
+   Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua"))() end,
+})
+
+TabMain:CreateSection("🌐 Danh Sách Script Khác")
+local Scripts = {
+   ["👑 Master Hub"] = "https://raw.githubusercontent.com/KiddoHiru/BloxFruits/main/MasterHub.lua",
+   ["👌 OK Hub"] = "https://raw.githubusercontent.com/fakekuri/Okhubhere/refs/heads/main/MainBloxFruit.lua",
+   ["⚡ God Hub"] = "https://raw.githubusercontent.com/shinichi-dz/phucshinsayhi/refs/heads/main/Loader.lua",
+   ["🌀 Maru Hub"] = "https://raw.githubusercontent.com/longhihilonghihi-hub/MaruHubV1/refs/heads/main/MainV1.Lua",
+   ["💙 Blue Hub"] = "https://raw.githubusercontent.com/Dev-BlueX/BlueX-Hub/refs/heads/main/Main.lua",
+}
+
+for name, url in pairs(Scripts) do
+   TabMain:CreateButton({
+      Name = name,
+      Callback = function()
+          getgenv().team = "Pirates"
+          loadstring(game:HttpGet(url))()
+      end,
+   })
+end
+
+local TabChill = Window:CreateTab("🌙 Chill Time", 4483362458)
+TabChill:CreateSection("🎵 Âm Nhạc")
+local sound = Instance.new("Sound", game:GetService("SoundService"))
+sound.Volume = 0.5
+sound.Looped = true
+local tracks = {
+    {name = "Ai Đưa Em Về (Low Cortisol)", id = "119589720384457"},
+    {name = "Sleeping City (Funk)",         id = "109138957141221"},
+    {name = "Sleeping City (Funk2)",        id = "130564494117233"},
+}
+for _, track in ipairs(tracks) do
+    TabChill:CreateButton({
+        Name = "▶ " .. track.name,
+        Callback = function()
+            sound:Stop()
+            sound.SoundId = "rbxassetid://" .. track.id
+            sound:Play()
+        end,
+    })
+end
+TabChill:CreateSlider({
+	Name = "🔊 Âm Lượng",
+	Range = {0, 100},
+	Increment = 1,
+	CurrentValue = 50,
+	Callback = function(val) sound.Volume = val / 100 end,
+})
+TabChill:CreateButton({ Name = "⏹ Dừng Nhạc", Callback = function() sound:Stop() end })
+
+local TabSpecial = Window:CreateTab("🔥 Đặc Biệt", 4483362458)
+TabSpecial:CreateSection("Tiện Ích")
+TabSpecial:CreateButton({
+   Name = "🐉 Dragon Hop Server",
+   Callback = function() loadstring(game:HttpGet("https://raw.githubusercontent.com/luacoder-byte/DragonHub/refs/heads/main/DragonHubHopServer.lua"))() end,
+})
+
+Rayfield:Notify({
+   Title = "Kasumi Hub",
+   Content = "đứa nào xài là gay.",
+   Duration = 5,
+   Image = 4483362458,
+})
